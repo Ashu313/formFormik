@@ -42,7 +42,7 @@ Address: Yup.string()
   .matches(
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
     'Password must contain at least one uppercase letter, one lowercase letter, and one number'
-  ).oneOf([Yup.ref("password")], "Passwords do not match"),
+  ).oneOf([Yup.ref("password")], "Passwords do not match").required('cnf password is required'),
 
 email: Yup.string().email('Invalid email address').required('Required'),
 gender: Yup.string().required('gender is required'),
